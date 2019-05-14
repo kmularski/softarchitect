@@ -1,0 +1,49 @@
+<snippet>
+	<content><![CDATA[
+<table id="tabela">
+	<!-- <caption>Info o zawartości</caption> -->
+	<!-- scalanie komórek
+	<colgroup>
+		<col span="2" style="background-color:red">
+		<col style="background-color:yellow">
+	</colgroup> -->
+	<thead>
+		<tr>
+			<th>${1:tytuł 1}</th>
+			<th>${2:tytuł 2}</th>
+			<th>${3:tytuł 3}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+	<!-- opcjonalna stopka tabeli
+	<tfoot>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tfoot> -->
+</table>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>table</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pełna struktura tabeli HTML</description>
+</snippet>

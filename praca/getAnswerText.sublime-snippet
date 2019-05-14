@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+// jednowyborowe
+\$marka_z4 = \$this->getAnswerText("P013_Z4","Z4",\$this->d("Z4"));
+array("at"=>"Czy lubi pan ".\$marka_z4."");
+
+\$P54_inne = ucfirst(\$this->d("P54","95","other")); //to gdy z pola otwartego z dużej litery
+
+// wielowyborowe
+\$marka_z4 = \$this->getAnswerText("P013_Z4","Z4","1"); // ostatnia jednyka to numer odpowiedzi
+array("at"=>"Czy lubi pan ".\$marka_z4."");
+
+\$P54_inne = ucfirst(\$this->d("P54","95","other")); //to gdy z pola otwartego w MULTI z dużej litery
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>getAnwerText</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Treści wskazanych odpowiedzi</description>
+</snippet>

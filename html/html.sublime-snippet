@@ -1,0 +1,48 @@
+<snippet>
+	<content><![CDATA[
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Language" content="pl" />
+<!-- responsywność:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+-->
+<title>${1}</title>
+
+<link type="text/css" rel="stylesheet" href="style.css" />
+
+<script type="text/javascript" src="skrypt.js"></script>
+
+</head>
+
+<body>
+
+<header>${2:
+  <hgroup id="document-title">
+    <h1>HTML</h1>
+    <h2>Living Standard — Last Updated 12 August 2016</h2>
+  </hgroup>}
+</header>
+
+<section>
+<p>${3}</p>
+</section>
+
+<footer>&copy; ${4}</footer>
+
+</body>
+
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>html5</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Podstawowa struktura HTML5</description>
+</snippet>

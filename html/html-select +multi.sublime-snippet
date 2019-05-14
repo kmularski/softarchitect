@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[<select name="${1}" size="${2}" multiple>
+	<option value="volvo">Volvo</option>
+	<option value="saab">Saab</option>
+	<option value="fiat">Fiat</option>
+	<option value="audi">Audi</option>
+</select>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>select</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Lista wyboru (wielowyborowa)</description>
+</snippet>

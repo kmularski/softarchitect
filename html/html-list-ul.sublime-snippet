@@ -1,0 +1,57 @@
+<snippet>
+	<content><![CDATA[
+<style>
+ul
+{
+    list-style: none; /* usuwa symbol listy */
+    padding: 0;
+    margin: 0;
+}
+li
+{ 
+    padding-left: 16px;/*
+    color – kolor elementu,
+	font-size – rozmiar czcionki,
+	font-weight – grubość czcionki,
+	font-style – styl czcionki,
+	font-family – rodzaj oraz rodzina czcionki,
+	text-decoration – wygląd tekstu*/
+}
+li:before
+{
+    content: "•"; /* wstaw dowolny symbol elementu listy */
+    padding-right: 8px;
+    color: blue; /* lub dowolny kolor */
+}
+/*
+list-style-type – sposób numerowania listy. Możliwe wartości:
+square – kwadrat,
+disc – koło,
+circle – okrąg,
+none – brak wypunktowania.
+
+list-style-position – określa pozycję znaku listy wypunktowanej. Możliwe wartości:
+outside – wypunktowanie na zewnątrz listy (domyślnie),
+inside – wypunktowanie wewnątrz listy,
+inherit – dziedziczy wartość po rodzicu.
+
+list-style-image – definiuje graficzny znak listy wypunktowanej. Możliwe wartości:
+none – brak grafiki (domyślnie),
+url("adres") – adres do grafiki,
+inherit – dziedziczy po rodzicu.
+
+list-style – definiuje właściwości listy. Umożliwia połączenie powyższych atrybutów w jednym poleceniu. Kolejność podawanych elementów ma znaczenie. Wymagane jest podanie wartości atrybutów w kolejności: list-style-type, list-style-image, list-style-position, oddzielonych od siebie spacjami, np. ul {circle url(obrazek.gif) inside;}
+*/
+</style>
+<ul${1: style="list-style-type:disc/*|circle|square|none*/;}">
+	<li>Coffee</li>
+	<li>Tea</li>
+	<li>Milk</li>
+</ul> 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ul</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Lista nieuporządkowana</description>
+</snippet>

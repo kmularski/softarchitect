@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[<textarea name="${1}" rows="${2:10}" cols="${3:30}" maxlength="${4:255}" placeholder="${5}"${6: wrap="soft|hard"} style="resize: none/*both|vertical|horizontal*/;">
+${7:soft :: The text in the textarea is not wrapped when submitted in a form. This is default
+hard :: The text in the textarea is wrapped (contains newlines) when submitted in a form. When "hard" is used, the cols attribute must be specified}
+</textarea>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>textarea</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Rozszerzone pole tekstowe</description>
+</snippet>

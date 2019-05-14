@@ -1,0 +1,57 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptin" => "VIRTUAL_IN.php",
+    "scriptout" => "P000_OUT.php",
+    "isvirtual" => true,
+    "hdr" => "<div class=\"alert alert-info\">Kontrola odpowiedzi z próbą</div>",
+    "js_func_onload" => (isset(\$_SESSION["fmgetparam"]["testuj"]) && \$_SESSION["fmgetparam"]["testuj"]=="1") ? "" : "setTimeout('\$(\'#fmnextbtn\').click();',50);",
+    "q"=> array(
+        array(
+            "hidden" => (isset(\$_SESSION["fmgetparam"]["testuj"]) && \$_SESSION["fmgetparam"]["testuj"]=="1") ? FALSE : TRUE,
+            "mark"=>"M14V",
+            "qtf" => "Wielkość gospodarstwa",
+            "qtm" => "Wielkość gospodarstwa",
+            "desc" => "M14V. Wielkość gospodarstwa:",
+            "type"=>"single",
+            "a" => array(
+                array("mark"=>"1","at"=>"1 os."),
+                array("mark"=>"2","at"=>"2 os."),
+                array("mark"=>"3","at"=>"3-5 os."),
+                array("mark"=>"4","at"=>"6+ os."),
+            ),
+        ),
+    ),
+);
+
+/* zawartość pliku "VIRTUAL_IN.php" do wykorzystania
+
+\$ileos = intval(\$this->d("M14","1"));
+
+if(\$ileos <= 1)
+    \$M14V = "1";
+elseif(\$ileos == 2)
+    \$M14V = "2";
+elseif(\$ileos >= 3 && \$ileos <= 5)
+    \$M14V = "3";
+else
+    \$M14V = "4";
+
+\$this->delPageFromData(\$this->getCurrPage()->getMark());
+\$this->savedv(\$this->getCurrPage()->getMark(),"M14V","","",\$M14V);
+\$this->saveData();
+
+//\$fmgo = (isset(\$_SESSION["fmgetparam"]["testuj"]) && \$_SESSION["fmgetparam"]["testuj"]=="1") ? TRUE : FALSE; //nie wchodź do tego pytania
+
+?>
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>virtual</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pytanie wirtualne</description>
+</snippet>

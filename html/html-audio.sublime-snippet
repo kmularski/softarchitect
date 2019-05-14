@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+<audio controls autoplay> <!-- not supported in Internet Explorer 8 and earlier versions -->
+	<source src="horse.ogg" type="audio/ogg">
+	<source src="horse.mp3" type="audio/mpeg">
+	Twoja przeglądarka nie wspiera tagu "audio"!
+</audio> 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>audio</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.html</scope> -->
+    <description>Odtwarzacz plików audio</description>
+</snippet>

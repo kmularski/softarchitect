@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "q"=> array(
+        array(
+            "mark"=>"${1:Q1}",
+            "qtf" => "",
+            "qtm" => "",
+            "desc" => "${2:Q1}. ",
+            "type"=>"field",
+                array("label"=>"Wiek w latach","inputbootsize"=>"2","labelbootsize"=>"3","fieldtype"=>"age"),
+        ),
+    ),
+);
+
+?>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>qage</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Pytanie o wiek</description>
+</snippet>

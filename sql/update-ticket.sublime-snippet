@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+-- zmiana ticketu
+UPDATE  tbScriptData SET ticket = '14-2682-001' WHERE scriptid = (SELECT ID FROM tbScripts WHERE name='nazwabadania') AND ticket = '14-2730-001';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ticket</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>[SQL] Zmiana ticketu</description>
+</snippet>

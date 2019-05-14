@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[<meter value="2" min="0" max="10">2 out of 10</meter><br>
+<meter value="0.6">60%</meter>${1: <!-- not supported in Internet Explorer, Edge 12, Safari 5 and earlier versions -->}
+<!-- przykład: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_meter -->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>meter</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Mierzenie danych w zadanym przedziale</description>
+</snippet>

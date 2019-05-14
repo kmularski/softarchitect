@@ -1,0 +1,108 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+//Stwierdzenia czyli to co będzie pytaniami
+\$stw = array(
+array("mark"=>"1","qt"=>"nudne"),
+array("mark"=>"2","qt"=>"przekazujące nieistotne informacje"),
+array("mark"=>"3","qt"=>"niezrozumiałe"),
+array("mark"=>"4","qt"=>"spóźnione"),
+array("mark"=>"5","qt"=>"przegadane"),
+array("mark"=>"6","qt"=>"zbyt ogólne"),
+array("mark"=>"7","qt"=>"nieprzydatne"),
+array("mark"=>"8","qt"=>"nie lubię ich"),
+);
+
+//Odpowiedzi dla każdego ze stwierdzeń
+\$odpy = array(
+    array("mark"=>"1","desc"=>"Ferrari"),
+    array("mark"=>"2","desc"=>"Lamborghini"),
+    array("mark"=>"3","desc"=>"Porsche"),
+);
+
+if (\$fmcallerf=="") shuffle(\$stw); // rotacja stwierdzeń
+
+\$co = "";
+
+
+\$pyty = array();
+
+\$nr = 0;
+
+foreach (\$stw as \$pyt) 
+{
+    \$nr++;
+
+    unset(\$odpy);
+    
+    //Odpowiedzi dla każdego ze stwierdzeń filtrowane/dezaktywowane po warunku
+    \$odpy = array(
+        array("mark"=>"1","desc"=>"Ferrari","disabled"=>(rand(1,2) == 1) ? true : false),
+        array("mark"=>"2","desc"=>"Lamborghini","disabled"=>(rand(1,2) == 1) ? true : false),
+        array("mark"=>"3","desc"=>"Porsche","disabled"=>(rand(1,2) == 1) ? true : false),
+    );
+
+    if(\$nr == 1)
+    {
+
+        \$co .= "<div class=\"row\">
+            <div class=\"col-md-6\"><!--<b>stwierdzenia:</b>--></div>";
+        
+        foreach (\$odpy as \$odp) 
+        {
+            \$co .= "<div class=\"col-md-2\" style=\"font-weight: bold; color: blue;\">".\$odp["desc"]."</div>";
+        }
+        
+        \$co .= "</div>";
+    }
+    else
+        \$co = "";
+
+    if(\$nr % 2 == 1)
+        \$style = "background-color: #fafafa; padding: 20px 0;";
+    else
+        \$style = "padding: 0;";
+
+    \$pyty[] =  array(
+        "mark"=>"GRID_MULTI_".\$pyt["mark"],
+        "desc" => "GRID_MULTI_".\$pyt["mark"].". (".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]).")",
+        //"qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        //"qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),            
+        "type"=>"multi",
+        "libcss" => "css/row.css",
+        "isverticalmanual" => true, //odkomentuj jeśli odpowiedzi mają być w pionie
+        "customcontent" => \$co."
+            <div class=\"row\" style=\"".\$style."\">
+              <div class=\"col-md-6\"><b>".\$pyt["qt"]."</b></div>
+              <div class=\"col-md-2\">[1]</div>
+              <div class=\"col-md-2\">[2]</div>
+              <div class=\"col-md-2\">[3]</div>
+              <!--<div class=\"col-md-1\">[8]</div>-->
+            </div>", 
+            "a" => \$odpy
+    );
+}
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    //"qinportlets" => true,
+    "hdrf" => "Jakie są Twoim zdaniem komunikaty zarządu?",
+    "hdrm" => "Jakie są Twoim zdaniem komunikaty zarządu?",
+    "q"=> \$pyty
+);
+
+unset(\$odpy);
+unset(\$pyty);
+
+?>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>qgrid</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Tabelka ze skalą (MULTI) + disabled</description>
+</snippet>

@@ -1,0 +1,94 @@
+<snippet>
+	<content><![CDATA[
+
+\$scriptdataid = oS::GetSess(["fmsurvid"]) ? oS::GetSess(["fmsurvid"]) : null; //ticket
+
+\$PLEC = "1";
+\$EDU = "5";
+\$RESINFO = "Imię i Nazwisko Respondenta";
+\$RESADRES = "ul. Nieokreślona 15, 05-456 Testowo";
+\$ROUR = "1980";
+\$ILEOS = "5";
+\$CZAS = "0";
+\$s4 = "1";
+\$s5 = "1";
+\$s6 = "99";
+\$s7 = "999";
+
+if (\$scriptdataid!="test9")
+{
+  try
+  {
+    \$querynm = "SELECT
+  (convert_from(decode(tbscriptdata.jdata ->> 'KONT_Name_1'::text, 'BASE64'::text), 'UTF-8'::name) || ' ' || convert_from(decode(tbscriptdata.jdata ->> 'KONT_Name_2'::text, 'BASE64'::text), 'UTF-8'::name))::text AS im_nazw,
+  (tbscriptdata.jdata->>'S1')::text AS plec,
+  (tbscriptdata.jdata->>'S8_ILE_1')::text AS gosp,
+  (tbscriptdata.jdata->>'S2_1')::text AS rok,
+    ((tbscriptdata.jdata->>('ADRES_2')) ||' '|| (tbscriptdata.jdata->>('ADRES_3')) ||
+    case 
+    when  (tbscriptdata.jdata->>('ADRES_4')) is null then  '' 
+    else ' lok. ' || (tbscriptdata.jdata->>('ADRES_4'))
+    end
+    || ', ' || (tbscriptdata.jdata->>('ADRES_5')) || ' ' || (tbscriptdata.jdata->>('ADRES_1'))
+  )::text AS adres, 
+  (tbscriptdata.jdata->>'M1')::text AS wykszt,
+  (tbscriptdata.jdata->>'S4')::text AS s4,
+  (tbscriptdata.jdata->>'S5')::text AS s5,
+  (tbscriptdata.jdata->>'S6')::text AS s6,
+  (tbscriptdata.jdata->>'S7')::text AS s7
+  
+from tbscriptdata 
+--join tbscripttasks ON tbscripttasks.scriptdataid = tbscriptdata.id 
+--join tbtasks ON tbtasks.id = tbscripttasks.taskid 
+where tbscriptdata.id = '".\$scriptdataid."';
+";
+
+    //\$result = \$this->queryDBparams(\$querynm, [\$scriptdataid]);
+    \$result = \$this->queryDB(\$querynm);
+
+    if(\$result !== false && count(\$result) > 0)
+    {
+      foreach (\$result as \$row)
+      {
+        \$PLEC = \$row['plec'];
+        \$EDU = \$row['wykszt'];
+        \$RESINFO = \$row['im_nazw'];
+        \$RESADRES = \$row['adres'];
+        \$ROUR = \$row['rok'];
+        \$ILEOS = \$row['gosp'];
+        \$s4 = \$row['s4'];
+        \$s5 = \$row['s5'];
+        \$s6 = \$row['s6'];
+        \$s7 = \$row['s7'];
+      }  
+    }
+  }
+  catch (Exception \$e)
+  {
+    //
+  }
+  unset(\$result);
+}
+
+    \$this->delPageFromData(\$this->getCurrPage()->getMark());
+
+    \$this->savedv(\$this->getCurrPage()->getMark(),"PLEC","","",\$PLEC);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"EDU","","",\$EDU);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"RESINFO","1","",\$RESINFO);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"RESADRES","1","",\$RESADRES);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"ROUR","1","",\$ROUR);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"ILEOS","1","",\$ILEOS);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"CZAS","1","",\$CZAS);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"S4","","",\$s4);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"S5","","",\$s5);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"S6","","",\$s6);
+    \$this->savedv(\$this->getCurrPage()->getMark(),"S7","","",\$s7);
+    
+    \$this->saveData();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>wczytaj</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>[PHP+SQL] Wczytywanie danych z innego skryptu</description>
+</snippet>

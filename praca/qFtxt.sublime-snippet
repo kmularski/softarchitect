@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "q"=> array( 
+        array(
+            "mark"=> "${1:Q1}",
+            "qtf" => "",
+            "qtm" => "",
+            "desc" => "${2:Q1}. ",
+            "type"=> "field",
+            "a" => array(
+                array("label"=>"Nr domu:","inputbootsize"=>"2","labelbootsize"=>"3"),
+                array("label"=>"Nr lokalu:","inputbootsize"=>"2","labelbootsize"=>"3","isarequired"=>FALSE),
+                array("at"=>"Odmowa","type"=>"field_none")
+            ),
+        ),
+    ),
+);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qtxt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pytanie z polami tekstowymi.</description>
+</snippet>
+ 

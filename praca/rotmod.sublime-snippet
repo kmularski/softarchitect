@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+array(
+  "type"=>"module",
+  "rotate"=>true,
+  "childs"=>array(
+    array("mark"=>"Q125_Q125_1","type"=>"page"),
+    array("mark"=>"Q125_Q125_2","type"=>"page"),
+    array("mark"=>"Q125_Q125_3","type"=>"page"),
+  )
+),
+]]>
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>rotm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Rotacja modułów w schemacie</description>
+</snippet>

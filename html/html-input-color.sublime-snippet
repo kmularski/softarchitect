@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<input type="color" name="${1}" value="#ff0000"> <!-- HTML5 :: not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions -->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>color</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wybrór koloru</description>
+</snippet>

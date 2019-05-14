@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+<input type="text" name="${1}" list="nazwalisty" placeholder="">
+	<datalist id="nazwalisty">
+	<!-- datalist tag is not supported in Internet Explorer 9 and earlier versions, or in Safari -->
+		<option value="1" label="Chrome">
+		<option value="2" label="Firefox">
+		<option value="3" label="Internet Explorer">
+		<option value="4" label="Opera">
+		<option value="5" label="Safari">
+		<option value="6" label="Microsoft Edge">
+	</datalist>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>text-datalist</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pole tekstowe z listą podpowiedzi</description>
+</snippet>

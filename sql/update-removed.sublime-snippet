@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+UPDATE tbScriptData 
+SET 
+status = 'REMOVED', ticket = ticket||'-REMOVED' 
+WHERE 
+ScriptID = (SELECT id FROM tbSCripts WHERE name = 'nazwabadania') AND NOT status = 'REMOVED';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>removed</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>[SQL] Czyszczenie bazy</description>
+</snippet>

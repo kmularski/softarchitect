@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+str_pad(\$x, 2, 0, STR_PAD_LEFT)
+/* przykład
+for(\$x = 1; \$x < 20; \$x++)
+{
+    echo str_pad(\$x, 2, 0, STR_PAD_LEFT).'<br />';
+}
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>zero</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Zera wiodące</description>
+</snippet>

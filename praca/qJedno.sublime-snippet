@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    //"isbtnprev" => FALSE, //wyłączenie przycisku COFNIJ
+    //"isbtnnext" => FALSE, //wyłączenie przycisku DALEJ
+    "q"=> array(
+        array(
+            "mark" => "${1:Q1}",
+            "qtf"  => "${2:Treść}",
+            "qtm"  => "${2:Treść}",
+            "desc" => "${1:Q1}. ${2:Treść}",
+            "type" => "single", // select - lista rozwijalna
+            "arot" => false,
+            //"hassearchbox" => true, // wyszukiwarka w kafeterii (nie działa z "type" => "select")
+            //"isverticalmanual" => true, //odkomentuj jeśli odpowiedzi mają być w poziomie
+            "a" => array(
+                array("mark"=>"1","at"=>"Tak"),
+                array("mark"=>"2","at"=>"Nie"), //,"withoutinput"=>TRUE - tekst bez możliwości zaznaczenia
+                //array("mark"=>"7","at"=>"<i>Nie wiem / trudno powiedzieć</i>"),
+            ),
+        ),
+    ),
+);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qjedno</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Podstawowe pytanie jednowyborowe.</description>
+</snippet>

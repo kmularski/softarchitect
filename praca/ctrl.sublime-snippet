@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+// tutaj tablica z kafeterią do pytania
+\$odpy = array();
+\$odpy[] = array("mark"=>"1","at"=>"dolnośląskie");
+\$odpy[] = array("mark"=>"2","at"=>"kujawsko-pomorskie");
+\$odpy[] = array("mark"=>"3","at"=>"lubelskie");
+\$odpy[] = array("mark"=>"4","at"=>"lubuskie");
+\$odpy[] = array("mark"=>"5","at"=>"łódzkie");
+\$odpy[] = array("mark"=>"6","at"=>"małopolskie");
+\$odpy[] = array("mark"=>"7","at"=>"opolskie");
+\$odpy[] = array("mark"=>"8","at"=>"podkarpackie");
+\$odpy[] = array("mark"=>"9","at"=>"podlaskie");
+\$odpy[] = array("mark"=>"10","at"=>"śląskie");
+\$odpy[] = array("mark"=>"11","at"=>"świętokrzyskie");
+\$odpy[] = array("mark"=>"12","at"=>"warmińsko-mazurskie");
+\$odpy[] = array("mark"=>"13","at"=>"wielkopolskie");
+\$odpy[] = array("mark"=>"14","at"=>"zachodniopomorskie");
+if (\$fmcallerf!="" || \$this->d("P1","3")=="1" || \$this->d("P1","4")=="1") \$odpy[] = array("mark"=>"98","at"=>"<i>żadne</i>","type"=>"none");
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ctrl</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Kontrolowana kafeteria</description>
+</snippet>

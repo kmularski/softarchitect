@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    //"isbtnnext" => FALSE,
+    //"isbtnprev" => FALSE,
+    "q"=> array(
+        array(
+            "mark" => "D_P4",
+            "qtf"  => "P4. Proszę wskazać, które według Pani zdjęcia przedstawiają domy drewniane?<br><br><i>ANKIETER: Zaznacz wszystkie odpowiedzi respondenta.</i><p><br><i><font size=2>&copy; Wojciech Nitka</font></i></p>",
+            "qtm"  => "P4. Proszę wskazać, które według Pana zdjęcia przedstawiają domy drewniane?<br><br><i>ANKIETER: Zaznacz wszystkie odpowiedzi respondenta.</i><p><br><i><font size=2>&copy; Wojciech Nitka</font></i></p>",
+            "desc" => "P4. Proszę wskazać, które według Pana(i) zdjęcia przedstawiają domy drewniane?",
+            "type" => "multi_img",
+            "imgsinrow"=>"3", // liczba obrazków w wierszu
+            "arot" => true,
+            "a" => array(
+                array("mark"=>"1", "at"=>"Zdjęcie A","img"=>"img/D_P4_A.jpg"),
+                array("mark"=>"2", "at"=>"Zdjęcie B","img"=>"img/D_P4_B.jpg"),
+                array("mark"=>"3", "at"=>"Zdjęcie C","img"=>"img/D_P4_C.jpg"),
+                array("mark"=>"4", "at"=>"Zdjęcie D","img"=>"img/D_P4_D.jpg"),
+                array("mark"=>"5", "at"=>"Zdjęcie E","img"=>"img/D_P4_E.jpg"),
+                array("mark"=>"6", "at"=>"Zdjęcie F","img"=>"img/D_P4_F.jpg"),
+                array("mark"=>"7", "at"=>"<i>Żadne z powyższych</i>","type"=>"none","rotgroup"=>"2"),
+                //array("mark"=>"98", "at"=>"<i>odmowa</i>","type"=>"none"),
+            ),
+        ),
+    ),
+);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qwieloimg</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wielowyborowe z obrazkami</description>
+</snippet>

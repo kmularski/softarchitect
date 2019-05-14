@@ -1,0 +1,62 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$odp ="";
+\$odp = $this->d("A3");
+
+\$siec=array(
+  "1"=>array("mark"=>"1","qt"=>"T-MOBILE"),
+  "2"=>array("mark"=>"2","qt"=>"ORANGE"),
+  "3"=>array("mark"=>"3","qt"=>"PLAY"),
+  "4"=>array("mark"=>"4","qt"=>"PLUS"),
+  "5"=>array("mark"=>"5","qt"=>"Heyah"),
+  "6"=>array("mark"=>"6","qt"=>"Nju"),
+  "7"=>array("mark"=>"7","qt"=>"Plush"),
+
+);
+
+\$fmanswers = array(
+  array("at"=>"1<br><i style=\"font-size: 0.9em\">Na pewno bym nie polecił</i>"),
+  array("at"=>"2"),
+  array("at"=>"3"),
+  array("at"=>"4"),
+  array("at"=>"5"),
+  array("at"=>"6"),
+  array("at"=>"7"),
+  array("at"=>"8"),
+  array("at"=>"9"),
+  array("at"=>"10<br><i style=\"font-size: 0.9em\">Zdecydowanie bym polecił</i>")
+);
+
+\$mm="";
+if (\$fmcallerf == "")
+  \$mm=$siec[\$odp]["qt"];
+
+\$fmquestions = array(
+  array(
+    "mark" => "A5",
+    "qtm" => "",
+    "qtf" => "",
+    "type" => "single",
+    "desc" => "A5. ",
+    "isverticalmanual" => TRUE,
+    "a" => \$fmanswers         
+  ),
+);
+
+\$fmpage = array(
+  "isbtnabort"  => FALSE,
+  "qinportlets"  => FALSE,
+  "q" => \$fmquestions
+);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qskala10</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Skala 1-10 z opisem krewędzi i wyświetlaniem marki z innego pytania.</description>
+</snippet>
+ 

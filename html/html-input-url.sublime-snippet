@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<input type="url" name="${1}" value="" placeholder="http://"> <!-- HTML5 :: not supported in IE9 and earlier versions -->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>url</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pole z walidacją URL</description>
+</snippet>

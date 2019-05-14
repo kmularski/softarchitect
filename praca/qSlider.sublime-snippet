@@ -1,0 +1,104 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$ktory='';
+\$ktory=intval(substr(\$fmwhichpage,strlen(\$fmwhichpage)-1,1));
+
+\$ank = "<br><br><i>ANKIETER: pokazać ekran respondentowi</i>";
+
+\$co = "";
+
+if (\$fmcallerf=="")
+{
+  \$co .= "
+  <tr>
+    <td style=\"width:200px;font-size:1.2em;font-weight:bold;text-align:center;padding-right:40px;\">zdecydowanie mi się nie podoba</td>
+    <td style=\"text-align:center;font-size:1.2em;font-weight:bold;\">[P1]</td>
+    <td style=\"width:200px;font-size:1.2em;font-weight:bold;text-align:center;padding-left:40px;\">zdecydowanie mi się podoba</td>
+  </tr>
+  <!-- dodatkowa opcja do zaznaczenia
+  <tr>
+    <td></td>
+    <td colspan='3'>[P1_99".\$ktory."n]</td>
+    <td></td>
+  </tr> -->";
+}
+
+\$fmpage = array(
+  "isbtnabort" => false,
+  "scriptout" => "P000_OUT.php",
+  "scriptin" => "P000_IN.php",
+  "validscript" => "P000_VALID.php",
+  "iscustomcontent" => TRUE,
+  "libcss" => "css/slider.css",
+  "customcontent" => "<table style=\"margin-left:auto;margin-right:auto;width:100%\">".\$co."</table>",
+  "js_func_onload" => "
+    // liczba na suwaku
+    var slider = document.getElementById('fs_fsP1');
+    slider.noUiSlider.on('change', function( values, handle ){
+      \$('#fs_fsP1').find('.noUi-handle').show();
+    });
+    if (\$('#fsP1').val()=='')
+      \$(slider).find('.noUi-handle').hide();
+    ",
+    "hdr" =>"opcjonalny nadłówek",
+    "q"=> array(
+      array(
+        "mark" => "P1",
+        "type"=>"slider",
+        "qtf" => "treść",
+        "qtm" => "treść",
+        "desc" => "P1. treść",
+        "slider"=>array(
+          /*
+          "float" => true,
+          "min" => 0.49,
+          "max" => 3.49 ,
+          "step" => 0.1,
+          "mode" => "steps",
+          "percent" => FALSE,
+          "roundvalue" => false,
+          "valdesc" => " zł"
+          */
+          "min" => 0,
+          "max" => 10,
+          "mode" => "values",
+          "density" => 10,
+          "start" => 5,
+          "values" => array(0,10),
+          "percent" => FALSE,
+          "roundvalue" => TRUE
+        ),
+        "a"=>array(
+          array()
+        ),
+    ),
+      /* dodatkowa opcja do zaznaczenia
+      array(
+        "mark"=>"P1_99".\$ktory."n",
+        "desc" => "P1_99".\$ktory."n.  Znając już smak tego napoju, jak chętnie użył(a)by go Pan(i) do przygotowania drinka z alkoholem? (nie przygotowuję drinków / nie piję drinków z alkoholem)",
+        "type"=>"single",
+        "isarequired" => false,
+        "a" => array(
+           array("mark"=>"1",
+            "at"=>"<i>Dodatkowa opcja do zaznaczenia</i>",
+            "onchange"=>"
+            var slider = document.getElementById('fs_fsP1_99".\$ktory."_1');
+            \$(slider).find('.noUi-handle').hide();
+            \$('#fsP1_99".\$ktory."_1').val('');
+            "),
+        )
+    ),
+    */
+  ),
+);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qslider</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Suwak - JEDEN na ekran</description>
+</snippet>

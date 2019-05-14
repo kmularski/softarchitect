@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>Feet to Meters Length Converter</title>
+<body>
+
+<h2>Length Converter</h2>
+<p>Rok świetlny – jednostka odległości stosowana w astronomii. Jest równy odległości, jaką pokonuje światło w próżni w ciągu jednego roku juliańskiego (365,25 dnia, 31 557 600 sekund).</p>
+
+<p>
+  <label>rok świetlny (l.y.)</label>
+  <input id="inputFeet" type="number" placeholder="" value="" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+<p>metrów (m): <span id="outputMeters"></span></p>
+<p>kilometrów (km): <span id="outputKMeters"></span></p>
+<p>parseków (pc): <span id="outputParsek"></span></p>
+<p>jednostek astronomicznych (j.a.): <span id="outputJA"></span></p>
+<p>kwadrat: <span id="outputPotega"></span></p>
+<p>pierwiastek kwadratowy: <span id="outputSQRT"></span> (nie działa)</p>
+
+<!--
+  <input id="inputKM" type="number" placeholder="" value="">
+-->
+<script>
+function LengthConverter(valNum)
+{
+  document.getElementById("outputMeters").innerHTML=valNum*9.4607*1000000000000000;
+  document.getElementById("outputKMeters").innerHTML=valNum*9.4607*1000000000000000/1000;
+  //document.getElementById("outputKM").attr("value",valNum*9.4607*1000000000000000/1000);
+  document.getElementById("outputParsek").innerHTML=valNum*0.3066;
+  document.getElementById("outputJA").innerHTML=valNum*63241;
+  document.getElementById("outputPotega").innerHTML=Math.pow(valNum, valNum);
+  document.getElementById("outputSQRT").innerHTML=Math.pow(valNum, (1/valNum));
+}
+</script>
+</body>
+</html>

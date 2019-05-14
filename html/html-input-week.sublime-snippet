@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<input type="week" name="${1}" value="2018-W01"> <!-- HTML5 :: not supported in Firefox, Safari or Internet Explorer 11 and earlier versions -->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>week</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wybór tygodnia roku</description>
+</snippet>

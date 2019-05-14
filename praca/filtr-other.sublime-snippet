@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+\$inne = '';
+
+if ($this->d("P1","3") == 1) {
+    $inne = '<i>- '.$this->d("P1","3","other").'</i>';
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>rot</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wyciąganie tekstu z INNE w multi</description>
+</snippet>

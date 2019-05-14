@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[<form action="upload.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="plik"/><br/>
+	<input type="submit" name="upload" value="Wyślij plik"/>
+</form>
+
+<?php
+
+/* plik: upload.php */
+
+\$max_rozmiar = 1024*1024;
+
+if (is_uploaded_file(\$_FILES['plik']['tmp_name']))
+{
+    if (\$_FILES['plik']['size'] > \$max_rozmiar)
+    {
+        echo 'Błąd! Plik jest za duży!';
+    }
+    else
+    {
+        echo 'Odebrano plik. Początkowa nazwa: '.\$_FILES['plik']['name'];
+        echo '<br/>';
+        if (isset(\$_FILES['plik']['type']))
+        {
+            echo 'Typ: '.\$_FILES['plik']['type'].'<br/>';
+        }
+        move_uploaded_file(\$_FILES['plik']['tmp_name'],
+                \$_SERVER['DOCUMENT_ROOT'].'/foto/'.\$_FILES['plik']['name']);
+    }
+}
+else
+{
+   echo 'Błąd przy przesyłaniu danych!';
+}
+
+?>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>upload</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wgraj plik - folmularz HTML</description>
+</snippet>

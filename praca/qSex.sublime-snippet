@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "q"=> array(
+        array(
+            "mark" => "${1:S0}",
+            "qtf"  => "Płeć respontenta:",
+            "qtm"  => "Płeć respontenta:",
+            "desc" => "${1:S0}. Płeć respontenta",
+            "type" => "single",
+            "arot" => false,
+            "a" => array(
+                array("mark"=>"1","at"=>"Kobieta","genderval"=>"F"),
+                array("mark"=>"2","at"=>"Mężczyzna","genderval"=>"M"),
+            ),
+        ),
+    ),
+);
+
+// $this->setGender("F"); // zmiana wersjonowania pytań
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qsex</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pytanie o płeć</description>
+</snippet>

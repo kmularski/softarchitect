@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<script type="text/javascript" src="skrypt.js"></script>${1: <!-- w sekcji <HEAD> -->}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>js</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Dołącz zewnętrzny JavaScript</description>
+</snippet>

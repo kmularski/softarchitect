@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+if (\$p=="1")
+        \$this->setGender("M");
+    else
+    if (\$p=="2")
+        \$this->setGender("F");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>setGender</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Ustawienie płci respondenta</description>
+</snippet>

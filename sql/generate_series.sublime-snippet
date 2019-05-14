@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+SELECT 
+        gen.l
+      FROM 
+        (SELECT generate_series as l from generate_series(1,200)) as gen LEFT OUTER JOIN
+        (
+         SELECT 
+          cast(jdata->>'fMAX_1' as integer) as v,count(*) as cnt
+         FROM
+          tbScriptData 
+         WHERE
+         tbScriptData.Scriptid=(SELECT ID FROM tbScripts where name='mars3')
+          AND status='SUCCESS'
+         GROUP BY
+          cast(jdata->>'fMAX_1' as integer)
+        ) as s ON gen.l=s.v
+      ORDER BY 
+      CASE WHEN s.v IS NULL then 0 else s.cnt end, 
+      RANDOM() LIMIT 1;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>maxdiff</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>[SQL] Losowanie wersji</description>
+</snippet>

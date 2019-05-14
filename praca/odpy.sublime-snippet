@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+//Odpowiedzi dla każdego ze stwierdzeń
+\$odpy = array(
+    array("mark"=>"1","at"=>"Zdecydowanie nie dotyczy"),
+    array("mark"=>"2","at"=>"Raczej nie dotyczy"),
+    array("mark"=>"3","at"=>"Raczej dotyczy"),
+    array("mark"=>"4","at"=>"Zdecydowanie dotyczy"),
+    array("mark"=>"5","at"=>"<i>Nie wiem / Trudno powiedzieć</i>"),
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>odpy</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Tablica z odpowiedziami</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<progress value="${1}" max="100" style="width: 100%;"></progress>${2: <!-- not supported in Internet Explorer 9 and earlier versions -->}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>progress</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Pasek postępu</description>
+</snippet>

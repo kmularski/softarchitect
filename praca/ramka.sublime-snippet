@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+"<div style=\"text-align: center; padding: 15px; border: 1px solid #c0c0c0 !important; margin-top: 15px; font-weight: bold; font-size: 1.5em;\">". zmienna ."</div>",
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ramka</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>stwierdzenie w ramce</description>
+</snippet>

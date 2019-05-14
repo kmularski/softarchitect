@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+// wysyłka przez HTTPS:// - inaczej może być błąd 'HTTP 200'
+
+\$fmpage = array(
+	"isbtnabort" => FALSE,
+	"hdr" => "Czy mogę teraz poprosić o paragon i zrobić jego zdjęcie?",
+	"q"=> array(
+		array(
+			"mark"=> "C1a",
+			"desc" => "C1a. Zdjęcie paragonu",
+			"qt"=> "",
+			"upload" => array(
+				"type" => "img",
+				"text" => "Proszę kliknąć w powyższą ikonę i zrobić zdjęcie paragonu."
+			),
+			"type"=> "upload",
+			"a" => array(
+				array()
+				),
+            ),
+        ),
+    );
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qupload</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wysyłanie plików</description>
+</snippet>

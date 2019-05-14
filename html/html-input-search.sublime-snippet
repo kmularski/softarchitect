@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<input type="search" name="${1}" placeholder="SZUKAJ"> <!-- HTML5 -->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>search</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wyszukiwarka</description>
+</snippet>

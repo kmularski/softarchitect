@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pl" />
+<!--
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+-->
+<title>${1}</title>
+
+<link type="text/css" rel="stylesheet" href="style.css" />
+
+<script type="text/javascript" src="skrypt.js"></script>
+
+</head>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>head</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Część nagłównowa pliku HTML</description>
+</snippet>

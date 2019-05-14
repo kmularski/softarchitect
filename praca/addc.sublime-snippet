@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+\$this->fmgor->addC("<PRE>".print_r(\$qnrresp,true)."</PRE>");
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>addc</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Wyświetlanie dowolnej treści</description>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+<map name="planetmap">
+	<area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+	<area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+	<area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+</map>
+<!-- 
+	przykład:
+	https://www.w3schools.com/tags/tag_map.asp
+	generator map odsyłaczy (online):
+	http://summerstyle.github.io/summer/
+-->]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>map</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Mapa odsyłaczy</description>
+</snippet>

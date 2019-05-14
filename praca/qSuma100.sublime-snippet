@@ -1,0 +1,56 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+/* WALIDACJA SUMY
+case "P015_P11":{
+        \$suma=0;
+
+        if (isset(\$_POST['fP11_1'])) \$suma += intval(\$_POST['fP11_1']);
+        if (isset(\$_POST['fP11_2'])) \$suma += intval(\$_POST['fP11_2']);
+        if (isset(\$_POST['fP11_3'])) \$suma += intval(\$_POST['fP11_3']);
+        if (isset(\$_POST['fP11_4'])) \$suma += intval(\$_POST['fP11_4']);
+        if (isset(\$_POST['fP11_5'])) \$suma += intval(\$_POST['fP11_5']);
+
+        if (\$suma!=100) 
+            {
+                \$fmresult = false;
+                \$fmcurrp->setErr("Suma procent różna od 100!");
+            }
+        
+        break;
+    }
+*/
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "q"=> array(
+        array(
+            "mark"=>"P11",
+            "qtf" => "P11. Kto Pani zdaniem powinien mieć decydujący wpływ na dobór nauczycieli, programu i metody nauczania w szkołach?<br><br>Proszę podzielić 100% władzy nad szkołą między następujące instytucje:",
+            "qtm" => "P11. Kto Pana zdaniem powinien mieć decydujący wpływ na dobór nauczycieli, programu i metody nauczania w szkołach?<br><br>Proszę podzielić 100% władzy nad szkołą między następujące instytucje:",
+            "desc" => "P11. Kto Pana(i) zdaniem powinien mieć decydujący wpływ na dobór nauczycieli, programu i metody nauczania w szkołach? Proszę podzielić 100% władzy nad szkołą między następujące instytucje:",
+            "type"=>"field",
+            "a" => array(
+                array("label" => "Rodzice","fieldtype"=>"percent", "labelbootsize" => "3","inputbootsize" => "3"),
+                array("label" => "Dyrektor szkoły i nauczyciele","fieldtype"=>"percent", "labelbootsize" => "3","inputbootsize" => "3"),
+                array("label" => "Samorząd gminy/miasta","fieldtype"=>"percent", "labelbootsize" => "3","inputbootsize" => "3"),
+                array("label" => "Kuratorium i  minister edukacji","fieldtype"=>"percent", "labelbootsize" => "3","inputbootsize" => "3"),
+                array("label" => "Uczniowie","fieldtype"=>"percent", "labelbootsize" => "3","inputbootsize" => "3"),
+            ),
+        ),
+    ),
+);
+
+?>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qsuma100</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Sumowanie do 100 %</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+,"onchange"=>"\$('#q".$symbol."_".\$ktory."').find('input').not(\$(this)).attr('disabled',true);setTimeout('\$(\'#fmnextbtn\').click();',500);"
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>autonext</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Automatyczny klik 'dalej'</description>
+</snippet>

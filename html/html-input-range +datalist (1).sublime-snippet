@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[<input type="range" name="${1}" list="nazwalisty"> <!-- HTML5 :: not supported in Internet Explorer 9 and earlier versions -->>
+	<datalist id="nazwalisty">
+		<option value="0">
+		<option value="10">
+		<option value="20">
+		<option value="30">
+		<option value="40">
+		<option value="50">
+		<option value="60">
+		<option value="70">
+		<option value="80">
+		<option value="90">
+		<option value="100">
+	</datalist>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>range-datalist</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Slider ze skalą</description>
+</snippet>

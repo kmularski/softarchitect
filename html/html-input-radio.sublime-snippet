@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<label>labelka<input type="radio" name="${1}"></label>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>radio</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Przycisk "radio"</description>
+</snippet>

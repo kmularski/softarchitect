@@ -1,0 +1,9 @@
+[
+	{
+        "args":
+        {
+            "forward": true,
+        },
+        "command": "select_lines"
+    }	
+]

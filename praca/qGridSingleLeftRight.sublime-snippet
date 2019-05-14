@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[
+<?php
+
+//Stwierdzenia czyli to co będzie pytaniami
+\$stw = array(
+array("mark"=>"1","qt"=>"nudne vs ciekawe","lewa"=>"nudne","prawa"=>"ciekawe"),
+array("mark"=>"2","qt"=>"przekazujące nieistotne informacje vs przekazujące ważne informacje","lewa"=>"przekazujące nieistotne informacje","prawa"=>"przekazujące ważne informacje"),
+array("mark"=>"3","qt"=>"niezrozumiałe vs zrozumiałe","lewa"=>"niezrozumiałe","prawa"=>"zrozumiałe"),
+array("mark"=>"4","qt"=>"spóźnione vs w dobrym czasie","lewa"=>"spóźnione","prawa"=>"w dobrym czasie"),
+array("mark"=>"5","qt"=>"przegadane vs konkretne","lewa"=>"przegadane","prawa"=>"konkretne"),
+array("mark"=>"6","qt"=>"zbyt ogólne vs wystarczająco szczegółowe","lewa"=>"zbyt ogólne","prawa"=>"wystarczająco szczegółowe"),
+array("mark"=>"7","qt"=>"nieprzydatne vs przydatne","lewa"=>"nieprzydatne","prawa"=>"przydatne"),
+array("mark"=>"8","qt"=>"nie lubię ich vs lubię je","lewa"=>"nie lubię ich","prawa"=>"lubię je"),
+);
+
+if (\$fmcallerf=="") shuffle(\$stw); // rotacja stwierdzeń
+
+//Odpowiedzi dla każdego ze stwierdzeń
+\$odpy = array(
+    array("mark"=>"1","at"=>"1"),
+    array("mark"=>"2","at"=>"2"),
+    array("mark"=>"3","at"=>"3"),
+    array("mark"=>"4","at"=>"4"),
+    array("mark"=>"5","at"=>"5"),
+    //array("mark"=>"8","at"=>"nie wiem"),
+);
+
+\$pyty = array();
+\$co="";
+
+\$nr = 0;
+
+foreach (\$stw as \$pyt) 
+{
+    \$nr++;
+
+    if(\$nr % 2 == 1)
+        \$style = "background-color: #fafafa; padding-top: 10px;";
+    else
+        \$style = "";
+
+    \$pyty[] =  array(
+        "mark"=>"N12_".\$pyt["mark"],
+        "desc" => "N12_".\$pyt["mark"].". Jakie są Twoim zdaniem komunikaty zarządu?: (".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]).")",
+        //"qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        //"qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),            
+        "type"=>"single",
+        "libcss" => "css/row.css",
+        "isverticalmanual" => true, //odkomentuj jeśli odpowiedzi mają być w pionie
+        "customcontent" => "
+            <div class=\"row\" style=\"".\$style."\">
+              <div class=\"col-md-3\" style=\"text-align:right\"><b>".\$pyt["lewa"]."</b></div>
+              <div class=\"col-md-1\">[1]</div>
+              <div class=\"col-md-1\">[2]</div>
+              <div class=\"col-md-1\">[3]</div>
+              <div class=\"col-md-1\">[4]</div>
+              <div class=\"col-md-1\">[5]</div>
+              <div class=\"col-md-3\"><b>".\$pyt["prawa"]."</b></div>
+              <!--<div class=\"col-md-1\">[8]</div>-->
+            </div>", 
+            "a" => \$odpy
+    );
+}
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    //"qinportlets" => true,
+    "hdrf" => "Jakie są Twoim zdaniem komunikaty zarządu?",
+    "hdrm" => "Jakie są Twoim zdaniem komunikaty zarządu?",
+    "q"=> \$pyty
+);
+
+unset(\$odpy);
+unset(\$pyty);
+
+?>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>qgrid</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Tabelka ze skalą (LEWA vs PRAWA)</description>
+</snippet>

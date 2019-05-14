@@ -1,0 +1,70 @@
+<snippet>
+	<content><![CDATA[
+\$ktory='';
+\$ktory=intval(substr(\$fmwhichpage,strlen(\$fmwhichpage)-2,2));
+
+//Stwierdzenia, czyli to co będzie pytaniami
+\$stw = array(
+    array("mark"=>"1","qt"=>"Budowa domu drewnianego jest tańsza od budowy domu murowanego."),
+    array("mark"=>"2","qt"=>"Utrzymanie domu drewnianego jest tańsze od domu murowanego."),
+    array("mark"=>"3","qt"=>"Dom drewniany szybko się wychładza, ale też szybko się nagrzewa."),
+    array("mark"=>"4","qt"=>"Dom drewniany można wybudować w krótkim czasie."),
+    array("mark"=>"5","qt"=>"Dom drewniany jest zdrowy i przyjazny dla mieszkańców."),
+    array("mark"=>"6","qt"=>"Dom drewniany jest łatwopalny."),
+    array("mark"=>"7","qt"=>"Dom drewniany „łapie” wilgoć."),
+    array("mark"=>"8","qt"=>"Konstrukcja domu drewnianego jest nietrwała i wymaga częstej konserwacji."),
+    array("mark"=>"9","qt"=>"Brakuje fachowców, którzy potrafią wybudować dom drewniany."),
+    array("mark"=>"10","qt"=>"Dom drewniany jest narażony na szkodniki."),
+    //można też zrobić wersjonowanie płci: array("mark"=>"4","qtm"=>"Mały sklep osiedlowy","qtf"=>"Mały sklep osiedlowy")
+);
+
+//Odpowiedzi dla każdego ze stwierdzeń
+\$odpy = array(
+    array("mark"=>"1","at"=>"zdecydowanie się zgadzam"),
+    array("mark"=>"2","at"=>"raczej się zgadzam"),
+    array("mark"=>"3","at"=>"raczej się nie zgadzam"),
+    array("mark"=>"4","at"=>"zdecydowanie się nie zgadzam"),
+    array("mark"=>"5","at"=>"<i>nie wiem, trudno powiedzieć</i>"),
+);
+
+\$pyty = array();
+
+foreach (\$stw as \$pyt)
+// if (\$fmcallerf!="" || \$this->d("",\$pyt["mark"]) == "1") // filtrowanie stwierdzen po innym pytaniu
+// if (intval(\$pyt["mark"]) == \$ktory) // filtrowanie po numerze strony (jedno na ekran)
+{
+    \$pyty[] =  array(
+        "mark"=>"DP6_".\$pyt["mark"],
+        "qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        "qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),
+        "desc" => "DP6_".\$pyt["mark"].". ".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"])."",
+        "type"=>"single",
+        "arot"=>false,
+        //"isverticalmanual" => true, // odpowiedzi w poziomie
+        "a" => \$odpy
+    );
+}
+
+if (\$fmcallerf=="") shuffle(\$pyty); // rotacja stwierdzeń
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "qinportlets" => true,
+    "hdrf" => "P6. Odczytam teraz Pani kilka stwierdzeń. Proszę powiedzieć na ile Pani zgadza się z następującym stwierdzeniem na skali od 1 do 4, gdzie:",
+    "hdrm" => "P6. Odczytam teraz Panu kilka stwierdzeń. Proszę powiedzieć na ile Pan zgadza się z następującym stwierdzeniem na skali od 1 do 4, gdzie:",
+    "q"=> \$pyty
+);
+
+unset(\$odpy);
+unset(\$pyty);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qstw</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Stwierdzenia w losowej kolejności.</description>
+</snippet>

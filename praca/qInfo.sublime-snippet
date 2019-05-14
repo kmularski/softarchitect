@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "validscript" => "P000_VALID.php",
+    "hdrf" => "",
+    "hdrm" => "",
+    "q"=> array(
+        array(
+            "mark"=>"${1:Q}info",
+            "qtf" => "",
+            "qtm" => "",
+            "desc" => "${2:Q}info",
+            "type"=>"info",
+            "a" => array(
+                array(),
+            ),
+        ),
+    ),
+);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qinfo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Info do wyswietlenia.</description>
+</snippet>

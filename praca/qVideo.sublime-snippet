@@ -1,0 +1,65 @@
+<snippet>
+    <content><![CDATA[
+<?php
+\$qt="";
+if (\$this->d("ZSK1")=="1")
+  \$qt="Dla przypomnienia, proszę obejrzeć krótką animację o ZSK i PRK";
+else
+  \$qt="Proszę obejrzeć krótką animację o ZRK i PRK,";
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "scriptout" => "P000_OUT.php",
+    "scriptin" => "P000_IN.php",
+    "js_func_onload" => "
+    \$('#fmnextbtn').hide();
+
+    var video = document.getElementById('myVideo');
+    var supposedCurrentTime = 0;
+    video.addEventListener('timeupdate', function() {
+      if (!video.seeking) {
+            supposedCurrentTime = video.currentTime;
+      }
+    });
+    // prevent user from seeking
+    video.addEventListener('seeking', function() {
+      // guard agains infinite recursion:
+      // user seeks, seeking is fired, currentTime is modified, seeking is fired, current time is modified, ....
+      var delta = video.currentTime - supposedCurrentTime;
+      if (Math.abs(delta) > 0.01) {
+        video.currentTime = supposedCurrentTime;
+      }
+    });
+    // delete the following event handler if rewind is not required
+    video.addEventListener('ended', function() {
+      // reset state in order to allow for rewind
+        supposedCurrentTime = 0;
+        \$('#fmnextbtn').show();
+    });",
+
+    "q"=> array(
+        array(
+            "mark" => "ZSK1a",
+            "qt"  => \$qt."
+<br><br>
+<i>Ankieterze: sprawdź czy jest włączony dźwięk w komputerze. 
+
+<br><br>
+Proszę nacisnąć przycisk \"Play\", aby odtworzyć film.<br><br>
+    <video controls id=\"myVideo\"style=\"width:70%;\" poster=\"img/poster.png\">
+       <source src=\"img/z.mp4\" type='video/mp4;codecs=\"avc1.42E01E, mp4a.40.2\"'/>
+        Film wyświetli się gdy ankieta zostanie uruchomiona na przeglądarce wspierającej technologię HTML5.</i>
+    </video>",
+            "desc" => "ZSK1a. Animacja",
+            "type" => "info",
+        )
+     )
+);
+
+?>]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>qvideo</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Wyświetlanie filmu</description>
+</snippet>
