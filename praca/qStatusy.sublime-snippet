@@ -1,0 +1,128 @@
+<snippet>
+	<content><![CDATA[
+<?php
+
+\$symbol_pytania = "${1:STATUSY}";
+\$custom = "";
+\$isarequired = true;
+
+// Liczba wierszy na statusy
+\$stw = array(
+    array("mark"=>"1","qt"=>"1."),
+    array("mark"=>"2","qt"=>"2."),
+    array("mark"=>"3","qt"=>"3."),
+    array("mark"=>"4","qt"=>"4."),
+    array("mark"=>"5","qt"=>"5."),
+    array("mark"=>"6","qt"=>"6."),
+    array("mark"=>"7","qt"=>"7."),
+    array("mark"=>"8","qt"=>"8."),
+    array("mark"=>"9","qt"=>"9."),
+);
+
+\$pyty = array();
+
+foreach (\$stw as \$pyt)
+{
+    \$custom .= "<div class='row' style='border-top: 1px solid silver; margin-bottom: 20px; padding-top: 10px;'>
+        <div class='col-sm-1'>".\$pyt["mark"].".</div>
+        <div class='col-sm-8'>[".\$symbol_pytania."_".\$pyt["mark"]."][".\$symbol_pytania."_U_".\$pyt["mark"]."]</div>
+        <div class='col-sm-3'>Liczba adresów:<br>[".\$symbol_pytania."_N_".\$pyt["mark"]."]</div>
+    </div>";
+}
+
+foreach (\$stw as \$pyt)
+{
+    if(intval(\$pyt["mark"]) > 1)
+        \$isarequired = false;
+    else
+        \$isarequired = true;
+
+    \$pyty[] =  array(
+        "mark" => \$symbol_pytania."_".\$pyt["mark"],
+        //"qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        //"qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),
+        "desc" => \$symbol_pytania."_".\$pyt["mark"].". Status ".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"])."",
+        "type"=>"select",
+        "arot"=>false,
+        "isarequired"=>\$isarequired,
+        //"isverticalmanual" => true, // odpowiedzi w poziomie
+        "a" => array(
+            array("mark"=>"00","at"=>"00. Wywiad zrealizowany"),
+            array("mark"=>"01","at"=>"01. Odmowa podania informacji do siatki Kisha"),
+            array("mark"=>"02","at"=>"02. Wywiad przerwany bez szans kontynuowania"),
+            array("mark"=>"03","at"=>"03. Nie przeprowadzono wywiadu - brak osób spełniających kryteria doboru"),
+            array("mark"=>"04","at"=>"04. Nieobecność osoby wylosowanej siatką Kisha"),
+            array("mark"=>"05","at"=>"05. Odmowa udziału w badaniu wylosowanej Kishem osoby bez podania przyczyny"),
+            array("mark"=>"06","at"=>"06. Nieodpowiednia pora wizyty, wylosowana Kishem osoba jest zajęta"),
+            array("mark"=>"07","at"=>"07. Wylosowana Kishem osoba nie jest zainteresowany wywiadem"),
+            array("mark"=>"08","at"=>"08. Dla wylosowanej Kishem osoby jest to strata czasu"),
+            array("mark"=>"09","at"=>"09. Dla wylosowanej Kishem osoby jest to strata pieniędzy"),
+            array("mark"=>"10","at"=>"10. Zakłóca prywatność wylosowanej Kishem osoby, nie udziela informacji o sobie"),
+            array("mark"=>"11","at"=>"11. Wylosowana Kishem osoba nigdy nie uczestniczy w badaniach"),
+            array("mark"=>"12","at"=>"12. Wylosowana Kishem osoba uważa, że zgadzał się już na udział wystarczająco często"),
+            array("mark"=>"13","at"=>"13. Wylosowana Kishem osoba nie ma zaufania do badań"),
+            array("mark"=>"14","at"=>"14. Wylosowana Kishem osoba miała złe doświadczenia związane z udziałem w badaniach"),
+            array("mark"=>"15","at"=>"15. Wylosowanej Kishem osobie nie odpowiada tematyka badania"),
+            array("mark"=>"16","at"=>"16. Partner/ członkowie gospodarstwa domowego wylosowanej Kishem osoby nie zezwolili na wywiad"),
+            array("mark"=>"17","at"=>"17. Wylosowana Kishem osoba obawia się wpuszczać obce osoby do domu"),
+            array("mark"=>"18","at"=>"18. Pod wylosowanym adresem nikogo nie zastano - mieszkanie zamknięte"),
+            array("mark"=>"19","at"=>"19. Wskazano niewłaściwy adres, podany adres nie istnieje, pustostan, brak mieszkań prywatnych"),
+            array("mark"=>"20","at"=>"20. Inne przyczyny niezrealizowania wywiadu"),
+        ),
+    );
+    \$pyty[] =  array(
+        "mark"=> \$symbol_pytania."_N_".\$pyt["mark"],
+        //"qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        //"qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),
+        "desc" => \$symbol_pytania."_N_".\$pyt["mark"].". Liczba adresów ".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"])."",
+        "type"=>"field",
+        "arot"=>false,
+        "isarequired"=>\$isarequired,
+        //"isverticalmanual" => true, // odpowiedzi w poziomie
+        "a" => array(
+            array("mark"=>"1","desc"=>"Liczba adresów:","fieldtype"=>"positiveint","maxlength"=>"2","inputbootsize"=>"6","labelbootsize"=>"2"),
+        ),
+    );
+
+    \$pyty[] =  array(
+        "mark"=> \$symbol_pytania."_U_".\$pyt["mark"],
+        //"qtf" => (isset(\$pyt["qtf"]) ? \$pyt["qtf"] : \$pyt["qt"]),
+        //"qtm" => (isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"]),
+        "desc" => \$symbol_pytania."_U_".\$pyt["mark"].". Uwagi ".(isset(\$pyt["qtm"]) ? \$pyt["qtm"] : \$pyt["qt"])."",
+        "type"=>"field",
+        "arot"=>false,
+        "isarequired"=>false,
+        //"isverticalmanual" => true, // odpowiedzi w poziomie
+        "a" => array(
+            array("mark"=>"1","desc"=>"Treść uwag:","inputbootsize"=>"12","labelbootsize"=>"2","placeholder"=>"Uwagi"),
+        ),
+    );
+}
+
+//if (\$fmcallerf=="") shuffle(\$pyty); // rotacja stwierdzeń
+
+\$fmpage = array(
+    "isbtnabort" => false,
+    "btnnexttitle" => "Zapisz opis ścieżki",
+    //"scriptout" => "P000_OUT.php",
+    //"scriptin" => "P000_IN.php",
+    //"validscript" => "P000_VALID.php",
+    //"qinportlets" => true,
+    "iscustomcontent"=>true,
+    "customcontent"=>\$custom,
+    "hdrf" => "Podaj liczbę adresów w podziale na statusy, które odwiedziłeś przed zrealizowaniem wywiadu:",
+    "hdrm" => "Podaj liczbę adresów w podziale na statusy, które odwiedziłeś przed zrealizowaniem wywiadu:",
+    "q"=> \$pyty
+);
+
+unset(\$odpy);
+unset(\$pyty);
+
+?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qstatusy</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+    <description>Opis ścieżki adresowej</description>
+</snippet>
